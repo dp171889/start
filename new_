@@ -1,0 +1,70 @@
+#include<stdio.h>	//standard_input_output
+#include<string.h>
+
+
+void zcy()
+{
+	int j = 0;
+	for (int k = 1; k <= 10; k++)
+	{
+		for (int i = 1; i <= 10; i++)
+		{
+			printf("曾楚妍给爷爬\n");
+			printf("曾楚妍宝批龙\n");
+			printf("曾楚妍铁憨憨\n");
+			j++;
+		}
+	}
+	printf("次数:%d", j);	//print_function
+}
+ 
+void sum()
+{
+	long  num1;
+	long  num2;
+	long k;
+	scanf("%ld%ld", &num1, &num2);
+	k = num1 + num2;
+	printf("%ld", k);
+	return ;
+}
+
+void str()
+{
+	char arr1[] = "abcd";
+	char arr2[] = { 'a', 'b', 'c', 'd','\0'};
+	printf("%s\n", arr1);
+	printf("%s\n", arr2);
+	printf("%zd\n", strlen(arr1));
+	printf("%zd\n", strlen(arr2));
+	printf("%c\n",'\41');
+
+	
+
+}
+ 
+void g_offer_or_sell_sw()
+{
+	int line = 1;
+
+	while (line < 20000)
+	{
+		printf("敲一行代码:%d\n", line);
+		line++;
+	}
+	if (line >= 20000)
+		printf("好offer\n");
+}
+
+int add(int x,int y)
+{
+	int z = x + y;
+	return z;
+}
+
+
+int main()	//有且仅有一个主函数
+{
+	
+	return 0;
+}
