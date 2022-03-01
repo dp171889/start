@@ -1,0 +1,85 @@
+//1 2 3 5 8 13 21 34 55 89   斐波拉契数列；
+#include<stdio.h>
+int main()
+{
+	int n,i;
+	while (scanf("%d", &n) != EOF)
+	{
+		int sum = 0, v1 = 1, v2 = 2;
+		if (n == 1)
+			printf("%d\n",v1);
+		if (n == 2)
+			printf("%d\n",v2);
+		if (n >= 3)
+		{
+			for (i = 2; i < n; i++)
+			{
+				sum = v1 + v2;
+				v1 = v2;
+				v2 = sum;
+			}
+			printf("%d\n", sum);
+		}
+	}
+	return 0;
+}
+//两个数最大公约数和最小公倍数求法
+#include<stdio.h>
+int main()
+{
+    long m = 0,n= 0,i=0,j=0,k=0,l=0;
+    int flag1=1;
+    long max,min;
+    while(scanf("%ld %ld",&n,&m) != EOF)
+    {
+        l=n;k=m;
+        while(flag1)
+        {
+            i=m%n;
+            if(i==0)
+            {
+                max=n;
+                flag1 = 0;
+            }
+            else 
+            {
+                m=n;n=i;
+            }
+        }
+            j = k / max;
+            min = l * j;      
+           printf("%ld",max+min);
+    }
+    return 0;
+}
+//如果某一位是奇数，就把它变成1，如果是偶数，那么就把它变成0
+#include<stdio.h>
+int main()
+{
+    long n =0;
+    int i,j=0,sum=0,k,s;
+    while(scanf("%ld",&n) != EOF)
+    {
+        while( n > 0)
+        {
+            if((n%10)%2==0)
+            {
+                i=0;
+                j++;
+            }
+            else  {
+                i=1;
+                j++;
+            }
+            s=1;
+            for(k=0;k<j-1;k++)
+            {
+                s = s * 10;
+            }
+            sum += i*s;
+            n /= 10;
+        }
+        printf("%d",sum);
+    }
+    return 0;
+}
