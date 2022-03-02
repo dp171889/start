@@ -1,0 +1,27 @@
+//将一百元换成面值1，5，10的种数,每种面值最少一张；
+#include <stdio.h>
+int main()
+
+{
+
+	int x, y, z, i = 0;
+
+	for (x = 1; x <= 10; x++)
+
+		for (y = 1; y <= 50; y++)
+
+			for (z = 1; z <= 100; z++)
+
+			{
+
+				if (x * 10 + 5 * y + z == 100)
+
+					i++;
+
+			}
+
+	printf("There are %d ways.\n", i);
+
+	return 0;
+
+}
