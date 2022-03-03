@@ -1,0 +1,149 @@
+#include<stdio.h>
+#include<Windows.h>
+// 三个数由大到小依次输出
+void swap(int a,int b,int c)
+{
+	// a为最大，b次之，c最小
+	if( a < b)
+	{
+		int temp = a;
+		 a = b;
+		 b = temp;
+
+		if(a < c)
+		{
+			int temp = a;
+		     a = c;
+		     c = temp;
+		}
+
+	}
+     if(b<c)
+	{
+		int temp = b;
+		     b = c;
+		    c = temp;
+	}
+	printf("%d %d %d",a,b,c);
+}
+//100以内整除n的数
+void fun1(int n)
+{
+	for(int i=1;i<=100;i++)
+	{
+		if(0==i%n)
+		    printf("%d ",i);
+		Sleep(200);
+
+	}
+}
+
+void fun2(int a,int b)
+{
+	int r=0;
+    while(r=a%b)
+	{
+		a=b;
+		b=r;
+	}
+	printf("%d\n",b);
+}
+
+
+int main()
+{
+	int a =0;
+	int b =0;
+	scanf("%d%d",&a,&b);
+      fun2(a,b);
+	return 0;
+}
+//猜数字游戏
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+//RAND_MAX  32768
+void game_CSZ()
+{
+	//1.生成一个随机数
+	int ret =0;
+	int guess =0;
+	//时间戳
+	//
+	ret = rand()%100+1; //生成随机数 1--100
+
+	printf("%d\n",ret);
+	//2.猜数字
+	while(1)
+	{
+		printf("请输入数字:->");
+		scanf("%d",&guess);
+		if( guess < ret)
+		{
+			printf("数字猜小了\n");
+		}
+		if( guess > ret)
+		{
+			printf("数字猜大了\n");
+		}
+		if( guess == ret)
+		{ 
+			printf("恭喜猜对了\n"); 
+		     break;
+		}
+	}
+}
+
+void menu()
+{
+	printf("*******************\n");
+	printf("**1.play   0.exit**\n");
+	printf("*******************\n");
+}
+int main()
+{
+	int input =0;
+	srand((unsigned int) time(NULL));
+	do{
+		menu();
+	    printf("请输入数字:->");
+	    scanf("%d",&input);
+		switch(input)
+		{
+		case 1:
+			game_CSZ();
+			break;
+		case 0:
+			printf("退出游戏\n");
+			break;
+		default:
+		    printf("数字错误\n");
+			break;
+		}
+	  } while(input);
+		return 0;
+}
+
+//关机
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+	char arr[20] = { 0 };
+	system("shutdown -s -t 60");
+again:
+	printf("请注意。你的电脑将在60s后关机，如果输入：我很丑，就取消关机\n请输入->：");
+	scanf("%s",arr);
+	if(strcmp(arr,"我很丑")==0)
+	{
+		system("shutdown -a");
+	}
+	else
+	{
+		goto again;
+	}
+	return 0;
+}
